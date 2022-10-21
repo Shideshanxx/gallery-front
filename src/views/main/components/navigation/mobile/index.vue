@@ -30,7 +30,7 @@
       </li>
     </ul>
     <m-popup v-model="isOpenPopup">
-      <div>hshshsshh</div>
+      <menu-vue @onItemClick="onItemClick" :categorys="data"></menu-vue>
     </m-popup>
   </div>
 </template>
@@ -38,6 +38,7 @@
 <script setup>
 import { ref, onBeforeUpdate, watch } from 'vue'
 import { useScroll } from '@vueuse/core'
+import MenuVue from '@/views/main/components/menu/index.vue'
 
 // vite 构建的项目中，我们可以直接使用 defineProps 方法
 defineProps({
@@ -89,6 +90,7 @@ watch(currentCategoryIndex, (val) => {
 // item 点击事件
 const onItemClick = (index) => {
   currentCategoryIndex.value = index
+  isOpenPopup.value = false
 }
 
 // 控制popup展示
