@@ -2,7 +2,7 @@
   <m-popover class="flex items-center" position="bottom-left">
     <template #reference>
       <div
-        class="relative flex items-center p-0.5 rounded-sm cursor-pointer duration-200 outline-none hover:bg-zinc-100"
+        class="relative flex items-center p-0.5 rounded-sm cursor-pointer duration-200 outline-none hover:bg-zinc-100 dark:hover:bg-zinc-900"
       >
         <!-- 头像 -->
         <img class="w-3 h-3 rounded-sm" src="@/assets/vue.svg" alt="" />
@@ -10,7 +10,7 @@
         <m-svg-icon
           class="h-1.5 w-1.5 ml-0.5"
           name="down-arrow"
-          fillClass="fill-zinc-900"
+          fillClass="fill-zinc-900 dark:fill-zinc-300"
         ></m-svg-icon>
         <!-- vip -->
         <m-svg-icon
