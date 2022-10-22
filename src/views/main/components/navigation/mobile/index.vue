@@ -17,7 +17,7 @@
         <m-svg-icon class="w-1.5 h-1.5" name="hamburger"></m-svg-icon>
       </li>
       <li
-        v-for="(item, index) in data"
+        v-for="(item, index) in $store.getters.categorys"
         :key="item.id"
         class="shrink-0 px-1.5 py-0.5 z-10 duration-200 last:mr-4"
         :class="{
@@ -30,7 +30,7 @@
       </li>
     </ul>
     <m-popup v-model="isOpenPopup">
-      <menu-vue @onItemClick="onItemClick" :categorys="data"></menu-vue>
+      <menu-vue @onItemClick="onItemClick"></menu-vue>
     </m-popup>
   </div>
 </template>
@@ -39,14 +39,6 @@
 import { ref, onBeforeUpdate, watch } from 'vue'
 import { useScroll } from '@vueuse/core'
 import MenuVue from '@/views/main/components/menu/index.vue'
-
-// vite 构建的项目中，我们可以直接使用 defineProps 方法
-defineProps({
-  data: {
-    type: Array,
-    required: true
-  }
-})
 
 // 滑块初始样式
 const sliderStyle = ref({
